@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro; // O using UnityEngine.UI; si usás el texto viejo
+using TMPro; 
 
 public class GameManager : MonoBehaviour
 {
@@ -17,14 +17,14 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         if (instance == null) instance = this;
-        Time.timeScale = 1f; // Reanuda el tiempo por si se reinicia
+        Time.timeScale = 1f; 
     }
 
     void Update()
     {
         if (!juegoTerminado)
         {
-            // Suma puntaje con el paso del tiempo
+            
             score += Time.deltaTime * 10f;
             textoScore.text = "Score: " + Mathf.FloorToInt(score).ToString();
         }
@@ -33,14 +33,14 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         juegoTerminado = true;
-        Time.timeScale = 0f; // Congela el juego
+        Time.timeScale = 0f; 
         panelGameOver.SetActive(true);
         textoScoreFinal.text = "Puntaje Final: " + Mathf.FloorToInt(score).ToString();
     }
 
     public void ReiniciarJuego()
     {
-        // Recarga la escena actual
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -23,13 +23,13 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Si toca el suelo, puede volver a saltar
+       
         if (collision.gameObject.CompareTag("Suelo"))
         {
             enSuelo = true;
         }
 
-        // Si choca con un obstáculo, Game Over
+        
         if (collision.gameObject.CompareTag("Obstaculo"))
         {
             GameManager.instance.GameOver();

@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
     {
         while (GameManager.instance == null || !GameManager.instance.juegoTerminado)
         {
-            // Tiempo aleatorio impredecible
+           
             float espera = Random.Range(tiempoMin, tiempoMax);
             yield return new WaitForSeconds(espera);
 
@@ -33,7 +33,7 @@ public class Spawner : MonoBehaviour
             {
                 if (obstaculos.Length > 0)
                 {
-                    // Evita que repita el mismo obstáculo 2 veces seguidas
+                    
                     int randomIndex;
                     do
                     {
@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
 
                     ultimoIndice = randomIndex;
 
-                    // Posición base o con altura variable
+                  
                     Vector3 posicionSpawn = transform.position;
                     if (variarAltura)
                     {
